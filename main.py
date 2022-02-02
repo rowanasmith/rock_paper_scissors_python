@@ -30,7 +30,10 @@ import random
 choice = int(input("What do you choose? Type 0 for Rock, 1 for Paper, or 2 for Scissors "))
 
 possibilities = [rock, paper, scissors]
-print(f"You choose\n{possibilities[choice]}")
+if choice <= 2:
+  print(f"You choose\n{possibilities[choice]}")
+else:
+  print("You have typed an invalid number")
 computer_choice = random.randint(0, 2)
 print(f"The computer chose\n{possibilities[computer_choice]}")
 
@@ -48,10 +51,12 @@ elif choice == 1:
     print("You tie")
   else:
     print("You lose")
-else:
+elif choice == 2:
   if computer_choice == 0:
     print("You lose")
   elif computer_choice == 1:
     print("You win!")
   else:
     print("You tie")
+else:
+  print("You typed an invalid number")
